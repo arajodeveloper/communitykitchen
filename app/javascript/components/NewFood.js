@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Redirect } from 'react-router-dom';
 import { Col, Row, Button, Form, FormGroup, Label, Input } from "reactstrap";
+import List from './List';
 
 const NewFood = () => {
   const [foods, setFoods] = useState([]);
@@ -128,6 +129,7 @@ const NewFood = () => {
         </Button>
         { success && <Redirect to="/"/> }
       </Form>
+      <List />
     </>
   );
 };
