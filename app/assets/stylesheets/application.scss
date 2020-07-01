@@ -13,3 +13,18 @@
  *= require_tree .
  *= require_self
  */
+
+ .display-3{
+    font-size: 30px !important;
+    font-family: 'Glamour Absolute Extended' !important;
+ }
+ @font-face {
+    font-family: 'Glamour Absolute Extended';
+    src: url('../fonts/GlamourAbsolute_Extended.otf'); /* IE9 Compat Modes */
+  }
+  .btn{
+    color: #fff !important;
+    background-color: #17a2b8 !important;
+    border-color: #17a2b8 !important;
+  }
+  
