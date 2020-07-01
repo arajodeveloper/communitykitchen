@@ -3,5 +3,8 @@ class FoodsController < ApplicationController
     foods = Food.all
     render json: foods
   end
+
+ 
+
  
 end
