@@ -1,10 +1,12 @@
-import React from "react"
-import PropTypes from "prop-types"
+import React, { Component } from "react"
+// // import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
+import List from './List'
 class App extends React.Component {
   render () {
     return (
-      <React.Fragment>
-      </React.Fragment>
+    <>
+      <List />
+    </>
     );
   }
 }
