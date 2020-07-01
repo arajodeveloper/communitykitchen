@@ -1,0 +1,34 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+ /* required styles */
+
+@import './libraries/leaflet.scss';
+
+ .display-3{
+    font-size: 30px !important;
+    font-family: 'Glamour Absolute Extended' !important;
+ }
+ @font-face {
+    font-family: 'Glamour Absolute Extended';
+    src: url('../fonts/GlamourAbsolute_Extended.otf'); /* IE9 Compat Modes */
+  }
+  .btn{
+    color: #fff !important;
+    background-color: #17a2b8 !important;
+    border-color: #17a2b8 !important;
+  }
+  
