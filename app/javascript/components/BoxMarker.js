@@ -13,7 +13,7 @@ class BoxMarker extends Component {
     return (
       <Marker position={[this.props.lat, this.props.lng]} icon={this.props.icon}>
           <Popup>
-            Yummy food from grandma. <br /> Gives you rainbow happiness.
+           Box Number: #{this.props.box} <br /> {this.props.name}
           </Popup>
        </Marker>
     );
