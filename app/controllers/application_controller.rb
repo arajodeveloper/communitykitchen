@@ -20,13 +20,17 @@ class ApplicationController < ActionController::Base
       'limit' => 1
     }
     p URI.encode_www_form(params)
-    response = HTTParty.get('http://api.positionstack.com/v1/forward?' + URI.encode_www_form(params))
-    if response.code == 200
-      current_user.latitude = response['data'][0]['latitude']
-      current_user.longitude = response['data'][0]['longitude']
-      current_user.save()
-    else
-      p 'failed to get lat long'
+    if current_user.latitude.nil?
+      p 'data doesnt exist'
+      response = HTTParty.get('http://api.positionstack.com/v1/forward?' + URI.encode_www_form(params))
+      if response.code == 200
+        current_user.latitude = response['data'][0]['latitude']
+        current_user.longitude = response['data'][0]['longitude']
+        current_user.save()
+      
+      else
+        p 'failed to get lat long'
+      end
     end
     
     # call api with current user's address, get lat long
