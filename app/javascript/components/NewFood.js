@@ -129,7 +129,9 @@ const NewFood = () => {
         </Button>
         { success && <Redirect to="/"/> }
       </Form>
+      <div>
       <List />
+      </div>
     </>
   );
 };
