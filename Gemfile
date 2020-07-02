@@ -49,3 +49,4 @@ gem "devise", "~> 4.7"
 
 gem "react-rails", "~> 2.6"
 gem 'rspec-rails', groups: [:development, :test]
+gem "httparty"
