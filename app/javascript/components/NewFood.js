@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Redirect } from 'react-router-dom';
 import { Col, Row, Button, Form, FormGroup, Label, Input } from "reactstrap";
-import map from '../images/Gmas_kitchen_map_img.png'
+import List from "./List"
 
 const NewFood = () => {
   const [foods, setFoods] = useState([]);
@@ -127,7 +127,7 @@ const NewFood = () => {
       </Form>
       </div>
     <div className="float-left spacer col-6">
-      <img className="map_img" src={map}/>
+      <List />
     </div>
     </div>
     </>
