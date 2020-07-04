@@ -18,17 +18,185 @@
 
 @import './libraries/leaflet.scss';
 
+@font-face {
+  font-family: 'GlamourAbsolute_Extended';
+  src:url('GlamourAbsolute_Extended.otf');
+}
+
+.logo{
+  height: 28px;
+}
+.navbar {
+
+}
+
+.form-group {
+  margin-bottom: 0 !important;
+}
+.margin-fix {
+  margin-bottom: 1rem !important;
+}
+
+.form-control{
+  border: 1px solid #2c1827 !important;
+}
+.rails-form{
+  margin-top: 10px;
+}
+
+input::placeholder{
+  color: #2c1827 !important;
+}
+
+textarea::placeholder{
+  color: #2c1827 !important;
+}
+
+.nav-item{
+  list-style: none !important;
+}
+.nav-item a{
+  color: #2c1827 !important;
+  font-family: 'Montserrat', sans-serif !important;
+  font-weight: 500;
+  text-transform: uppercase !important;
+  font-size: 14px !important;
+}
+
+.nav-item a:hover{
+  color: #ee7475 !important;
+}
+.map_img{
+  width:100%;
+  max-width:600px;
+  border: 1px solid #2c1827 !important;
+  padding: 0 !important;
+}
+
+.float-left{
+  float: left;
+}
+
+.float-right{
+  float: right;
+}
+.container{
+  width: 1200px;
+}
+.form-body{
+  background-color: #f8f9fa!important;
+}
+
+ .form-flt-left{
+  color: #2c1827 !important;
+  font-family: 'Montserrat', sans-serif !important;
+  text-transform: uppercase;
+  float:left;
+}
+.spacer{
+  margin-top:23px;
+}
+
+.jumbotron {
+  min-height: 473px !important;
+  max-width: 100% !important;
+  text-align: center;
+  background-position: center bottom;
+}
  .display-3{
-    font-size: 30px !important;
-    font-family: 'Glamour Absolute Extended' !important;
+  font-size: 28px !important;
+  font-family: 'GlamourAbsolute_Extended' !important;
+  text-align: center !important;
+}
+
+
+.btn2{
+  color: #2c1827 !important;
+  font-family: 'Montserrat', sans-serif !important;
+  font-weight: 500;
+  text-transform: uppercase;
+  background-color: #ee7475 !important;
+  border-color: #ee7475 !important;
+  border-width: 2px !important;
+  font-size: 14px !important;
+  padding: 10px 36px !important;
+  margin:20px 10px 0px 10px !important;
+}
+.btn-form{
+  color: #2c1827 !important;
+  font-family: 'Montserrat', sans-serif !important;
+  font-weight: 500;
+  text-transform: uppercase;
+  background-color: #ee7475 !important;
+  border-color: #ee7475 !important;
+  border-width: 2px !important;
+  font-size: 14px !important;
+  padding: 10px 36px !important;
+}
+.btn-form:hover{
+  color: #ee7475 !important;
+  background-color: Transparent !important;
+  background-repeat:no-repeat !important;
+  border-color: #2c1827 !important;
+  border-width: 2px !important;
+  font-weight: 500;
+}
+.btn2:hover{
+  color: #ee7475 !important;
+  background-color: Transparent !important;
+  background-repeat:no-repeat !important;
+  border-color: #2c1827 !important;
+  border-width: 2px !important;
+  font-weight: 500;
+}
+
+.btn1:hover{
+  color: #ee7475 !important;
+  background-color: Transparent !important;
+  background-repeat:no-repeat !important;
+  border-color: #2c1827 !important;
+  border-width: 2px !important;
+  font-weight: 500;
+}
+
+.btn1{
+  color: #2c1827 !important;
+  background-color: Transparent !important;
+  background-repeat:no-repeat !important;
+  border-color: #2c1827 !important;
+  border-width: 2px !important;
+  font-family: 'Montserrat', sans-serif !important;
+  text-transform: uppercase;
+  font-size: 14px !important;
+  padding: 10px 36px !important;
+  margin:20px 10px 0px 10px;
+  font-weight: 500;
  }
- @font-face {
-    font-family: 'Glamour Absolute Extended';
-    src: url('../fonts/GlamourAbsolute_Extended.otf'); /* IE9 Compat Modes */
-  }
-  .btn{
-    color: #fff !important;
-    background-color: #17a2b8 !important;
-    border-color: #17a2b8 !important;
-  }
-  
+
+ .btn4{
+  color: #2c1827 !important;
+  background-color: #ee7475 !important;
+  border-color: #ee7475 !important;
+  border-width: 2px !important;
+  font-family: 'Montserrat', sans-serif !important;
+  text-transform: uppercase;
+  font-size: 14px !important;
+  padding: 10px 36px !important;
+  font-weight: 500;
+}
+.btn3{
+  color: #2c1827 !important;
+  background-color: Transparent !important;
+  background-repeat:no-repeat !important;
+  border-color: #2c1827 !important;
+  border-width: 2px !important;
+  font-family: 'Montserrat', sans-serif !important;
+  text-transform: uppercase;
+  font-size: 14px !important;
+  padding: 10px 36px !important;
+  font-weight: 500;
+ }
+
+ ::after, ::before {
+  box-sizing: border-box;
+ }

@@ -1,54 +1,111 @@
-<h2>Sign up</h2>
+<!DOCTYPE html>
+<html>
+  <head>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500&display=swap" rel="stylesheet">
+    <title>Community Kitchen</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
 
-  <div class="field">
-    <%= f.label :first_name %><br />
-    <%= f.text_field :first_name, autofocus: true, autocomplete: "first_name" %>
-  </div>
-  <div class="field">
-    <%= f.label :last_name %><br />
-    <%= f.text_field :last_name, autofocus: true, autocomplete: "last_name" %>
-  </div>
-  <div class="field">
-    <%= f.label :address %><br />
-    <%= f.text_field :address, autofocus: true, autocomplete: "address" %>
-  </div>
-  <div class="field">
-    <%= f.label :city %><br />
-    <%= f.text_field :city, autofocus: true, autocomplete: "city" %>
-  </div>
-  <div class="field">
-    <%= f.label :state %><br />
-    <%= f.text_field :state, autofocus: true, autocomplete: "state" %>
-  </div>
-  <div class="field">
-    <%= f.label :zip_code %><br />
-    <%= f.text_field :zip_code, autofocus: true, autocomplete: "zipcode" %>
-  </div>
-  
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+  <body class="form-body">
 
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
+    <nav class="navbar navbar-expand-md navbar-light bg-light">
+      <a class="navbar-brand" href="/"><img src="/packs/media/images/Gmas_kitchen_logo_dark_300-341548e2bee00f73ca7877b53468f4ba.png" class="logo"></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+      </button>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="mr-auto navbar-nav "></ul>
+        <li class="nav-item">
+            <a class="nav-link" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/users/sign_in">Sign in</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/users/sign_up">Sign up</a>
+        </li>
+      </div>
+    </nav>
 
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
+    <h2  class="display-3" style="margin: 64px 0 64px 0;">Sign-up Form</h2>
 
-<%= render "devise/shared/links" %>
+    <div class="container col-12">
+      <div class="form-flt-left col-6">
+          <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+          <%= render "devise/shared/error_messages", resource: resource %>
+
+          <form>
+
+            <div class="form-row">
+              <div class="field form-group margin-fix col-md-6">
+              <%= f.text_field :first_name, autofocus: true, autocomplete: "first_name", :class => 'form-control', placeholder: 'First Name' %>
+              </div>
+
+              <div class="field form-group margin-fix col-md-6">
+                <%= f.text_field :last_name, autofocus: true, autocomplete: "last_name", :class => 'form-control', placeholder: 'Last Name'%>
+              </div>
+            </div>
+
+            <div class="form-row">
+            <div class="field form-group margin-fix col-md-12">
+                <%= f.email_field :email, autofocus: true, autocomplete: "email" , :class => 'form-control', placeholder: 'Email' %>
+              </div>
+            </div>
+
+            <div class="form-row">
+            <div class="field form-group margin-fix col-md-12">
+                <%= f.text_field :address, autofocus: true, autocomplete: "address", :class => 'form-control', placeholder: 'Street Address' %>
+              </div>
+            </div>
+            
+            <div class="form-row">
+            <div class="field form-group margin-fix col-md-5">
+                <%= f.text_field :city, autofocus: true, autocomplete: "city", :class => 'form-control', placeholder: "City" %>
+              </div>
+
+              <div class="field form-group margin-fix col-md-2">
+                <%= f.text_field :state, autofocus: true, autocomplete: "state", :class => 'form-control', placeholder: "State" %>
+              </div>
+
+              <div class="field form-group margin-fix col-md-5">
+                <%= f.text_field :zip_code, autofocus: true, autocomplete: "zipcode", :class => 'form-control', placeholder: "Zip Code" %>
+              </div>
+            </div>
+
+            <div class="form-row">
+            <div class="field form-group margin-fix col-md-12">
+                <%= f.password_field :password, autocomplete: "new-password", :class => 'form-control', placeholder: 'Password (minimun 6 characters)' %>
+              </div>
+            </div>
+
+            <div class="form-row">
+            <div class="field form-group margin-fix col-md-12">
+                <%= f.password_field :password_confirmation, autocomplete: "new-password", :class => 'form-control', placeholder: 'Confirm Password' %>
+              </div>
+            </div>
+
+            <div class="actions">
+              <%= f.submit "Sign up", :class=> 'btn-form btn btn-secondary' %>
+            </div>
+          
+            <button class="btn1 btn btn-secondary">
+            <%= render "devise/shared/links"%></button>
+          </form>
+      </div>
+    </div>
+    <div class="float-left col-md-6">
+      <img class="map_img" src='/packs/media/images/Gmas_kitchen_map_img-1f185f9cd026c2e578882c504c760ed0.png' />
+    </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+  </body>
+</html>
+  <% end %>

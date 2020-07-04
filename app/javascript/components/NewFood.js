@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Redirect } from 'react-router-dom';
 import { Col, Row, Button, Form, FormGroup, Label, Input } from "reactstrap";
-import List from './List';
+import map from '../images/Gmas_kitchen_map_img.png'
 
 const NewFood = () => {
   const [foods, setFoods] = useState([]);
@@ -41,7 +41,7 @@ const NewFood = () => {
   const pushFoods = (freshFood) => {
     // fetch URL to post new state of `foods` to database
     return fetch("http://localhost:3000/foods", {
-      body: JSON.stringify(freshCat),
+      body: JSON.stringify(freshFood),
       headers: {
         "Content-Type": "application/json"
       },
@@ -58,80 +58,78 @@ const NewFood = () => {
 
   return (
     <>
+    <div className='container'>
+    <div className='form-flt-left col-6'>
       <Form>
-      <Row form>
-        <Col md={6}>
         <FormGroup>
           <Label htmlFor="name" id="name">
-            Food Title
           </Label>
           <Input
             type="text"
             name="name"
             onChange={ handleChange }
             value={form.name}
+            placeholder="Food Title"
           />
         </FormGroup>
-        </Col>
-        <Col md={6}>
         <FormGroup>
           <Label htmlFor="ingredients" id="ingredients">
-            Ingredients
           </Label>
           <Input
             type="textarea"
             name="ingredients"
             onChange={ handleChange }
             value={form.ingredients}
+            placeholder="Ingredients"
           />
         </FormGroup>
-        </Col>
-        </Row>
         <FormGroup>
           <Label htmlFor="description" id="description">
-            Description
           </Label>
           <Input
             type="textarea"
             name="description"
             onChange={ handleChange }
             value={form.description}
+            placeholder="Description"
           />
         </FormGroup>
         <FormGroup>
           <Label htmlFor="available_time" id="available_time">
-            Available Times
           </Label>
           <Input
             type="text"
             name="available_time"
             onChange={ handleChange }
             value={form.available_time}
+            placeholder="Available Drop-off Times"
           />
         </FormGroup>
         <FormGroup>
-          <Label htmlFor="image" id="image">Image URL</Label>
-          <Input type="url" name="image" placeholder="" onChange={ handleChange } value={ form.image }/>
+          <Label htmlFor="image" id="image"></Label>
+          <Input type="url" name="image" placeholder="Image URL" onChange={ handleChange } value={ form.image }/>
         </FormGroup>
         <FormGroup>
           <Label htmlFor="box" id="box">
-            Box
           </Label>
           <Input
             type="text"
             name="box"
             onChange={ handleChange }
             value={form.box}
+            placeholder="Box No."
           />
         </FormGroup>
-        <Button color="info" onClick={ handleSubmit } id="submit">
+        <Button className="btn2" onClick={ handleSubmit } id="submit">
           Submit
         </Button>
         { success && <Redirect to="/"/> }
       </Form>
-      <div>
-      <List />
       </div>
+    <div className="float-left spacer col-6">
+      <img className="map_img" src={map}/>
+    </div>
+    </div>
     </>
   );
 };

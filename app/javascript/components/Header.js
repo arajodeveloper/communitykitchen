@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import { Jumbotron, Button } from 'reactstrap';
-
+import bgimage from '../images/Gmas_kitchen_bg_image_300.png'
 
 
 class Header extends React.Component {
@@ -11,12 +11,13 @@ class Header extends React.Component {
         sign_out_route
         } = this.props
 
+
         return (
             <>
-                <Jumbotron>
-                    <h1 className="display-3">Connecting Communities Through Food</h1>
-                    <Button color="info" href={sign_out_route}>Sign Out</Button>
-                    <Button color="info" href={sign_in_route}>Sign In</Button>
+                <Jumbotron style={{ backgroundImage: `url(${bgimage})`, backgroundSize: 'cover' }}>
+                    <h1 className="display-3">Connecting Communities</h1>
+                    <h1 className="display-3">Through Food</h1>
+                    <Button className="btn2" href="#">Become a Member</Button>
                 </Jumbotron>
         </>
         );

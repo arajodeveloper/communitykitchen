@@ -1,6 +1,7 @@
 import React from "react"
 import Navigation from "./Navigation"
 import Header from "./Header"
+import HeaderUser from "./HeaderUser"
 import NewFood from "./NewFood"
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -25,6 +26,7 @@ class App extends React.Component {
           </div>
         }
         <Header />
+        <HeaderUser />
         <NewFood />
       </React.Fragment>
     );
