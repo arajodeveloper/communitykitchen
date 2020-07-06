@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
+import { Jumbotron, Button } from 'reactstrap';
 import { Map, TileLayer } from 'react-leaflet';
 import BoxMarker from './BoxMarker'
 import leafGreen from './assets/leaf-green.png'
 import leafRed from './assets/leaf-red.png'
 import leafOrange from './assets/leaf-orange.png'
 import leafShadow from './assets/leaf-shadow.png'
-import { Jumbotron } from 'reactstrap';
 
 
 
-class NeedFood extends React.Component {
+class FoodMap extends React.Component {
 
   greenIcon = L.icon({
     iconUrl: leafGreen,
@@ -45,27 +45,26 @@ class NeedFood extends React.Component {
 
   constructor(props){
     super(props)
-    this.state = {
-      foods: [],
-      center: [32.639954, -117.106705],
-      zoom: 13
-    }
+    // this.state = {
+    //   foods: [],
+    //   center: [32.639954, -117.106705],
+    //   zoom: 13
+    // }
   }
   
-  componentDidMount(){
-    try {
-      fetch("http://localhost:3000/foods")
-      .then(response => response.json())
-      .then(data => {
-        console.log("data", data);
-        this.setState({foods: data})
-      })
-    } 
-    catch(err){
-      console.log(err);
-    }
-  }
-  
+  // componentDidMount(){
+  //   try {
+  //     fetch("http://localhost:3000/foods")
+  //     .then(response => response.json())
+  //     .then(data => {
+  //       console.log("data", data);
+  //       this.setState({foods: data})
+  //     })
+  //   } 
+  //   catch(err){
+  //     console.log(err);
+  //   }
+  // }
 
 
   render(){
@@ -78,35 +77,39 @@ class NeedFood extends React.Component {
     // ]);
     // const positionGreenIcon = [this.state.greenIcon.lat, this.state.greenIcon.lng]
     // const positionRedIcon = [this.state.redIcon.lat, this.state.redIcon.lng]
-
+    console.log('PROPS CHECK YO');
+    console.log(this.props);
+    console.log(this.props.foods.length);
+    console.log(this.props.foods);
     let content 
-    if(this.state.foods.length > 0) {
-      content = this.state.foods.map((food, idx) => {
+    if(this.props.foods.length > 0) {
+      console.log('food length gt 0');
+      content = this.props.foods.map((food, idx) => {
+        console.log('hey inside map')
+        console.log(idx, food.latitude, food.box_number, this.allIcons[idx % 3])
         return <BoxMarker key={idx} lat={food.latitude} lng={food.longitude} name={food.name} box={food.box_number} note={food.note} icon={this.allIcons[idx % 3]} />
       })
     } else {
-      
+      console.log('food length EMPTY');
       content = <div>Loading foods</div>
     }
   
     return(
       <>
-      <Jumbotron>
-      <Map center={this.state.center} zoom={this.state.zoom}>
+    
+      <Map center={this.props.center} zoom={this.props.zoom}>
         <TileLayer
           attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
        {content}
-      
-       
        
       </Map>
-      </Jumbotron>
+    
       </>
     
     )
   }
 }
 
-export default NeedFood
+export default FoodMap
