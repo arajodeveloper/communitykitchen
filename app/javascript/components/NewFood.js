@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Redirect } from 'react-router-dom';
 import { Col, Row, Button, Form, FormGroup, Label, Input } from "reactstrap";
 import List from "./List"
+import FoodMap from "./FoodMap"
 
 const NewFood = () => {
   const [foods, setFoods] = useState([]);
@@ -9,12 +10,26 @@ const NewFood = () => {
   const [form, setState] = useState({
     name: "",
     ingredients: "",
-    description: "",
-    available_time: "",
-    image_url: "",
-    box: "",
+    note: "",
+    time: "",
+    image: "",
+    box_number: "",
   });
- 
+
+  useEffect(() => {
+    // Update the document title using the browser API
+    try {
+      fetch("http://localhost:3000/foods")
+      .then(response => response.json())
+      .then(data => {
+        console.log("data", data);
+        setFoods(data)
+      })
+    } 
+    catch(err){
+      console.log(err);
+    }
+  }, []);
 
   const handleChange = (e) => {
     setState({
@@ -33,13 +48,14 @@ const NewFood = () => {
     console.log(form);
     // set the foods' state to include all foods
     // since the current cat state is immutable, we need to create a copy of it and add the new cat to it
-    setFoods((foods) => [...foods, form]);
+   
     // // send all foods in the state to the backend to post to the database
     pushFoods(form)
     setSuccess(true)
   };
   const pushFoods = (freshFood) => {
     // fetch URL to post new state of `foods` to database
+    console.log(freshFood);
     return fetch("http://localhost:3000/foods", {
       body: JSON.stringify(freshFood),
       headers: {
@@ -47,11 +63,12 @@ const NewFood = () => {
       },
       method: "POST"
     })
-    .then(res => {
-      if(res.ok) {
-        console.log('You did it!')
-      }
-    })
+    .then(response => response.json())
+    .then(data => {
+      form.latitude = data.latitude;
+      form.longitude = data.longitude;
+      setFoods((foods) => [...foods, form]);
+    });
     // add error catching
     // add success function
   }
@@ -84,24 +101,24 @@ const NewFood = () => {
           />
         </FormGroup>
         <FormGroup>
-          <Label htmlFor="description" id="description">
+          <Label htmlFor="note" id="note">
           </Label>
           <Input
             type="textarea"
-            name="description"
+            name="note"
             onChange={ handleChange }
-            value={form.description}
+            value={form.note}
             placeholder="Description"
           />
         </FormGroup>
         <FormGroup>
-          <Label htmlFor="available_time" id="available_time">
+          <Label htmlFor="time" id="time">
           </Label>
           <Input
             type="text"
-            name="available_time"
+            name="time"
             onChange={ handleChange }
-            value={form.available_time}
+            value={form.time}
             placeholder="Available Drop-off Times"
           />
         </FormGroup>
@@ -110,13 +127,13 @@ const NewFood = () => {
           <Input type="url" name="image" placeholder="Image URL" onChange={ handleChange } value={ form.image }/>
         </FormGroup>
         <FormGroup>
-          <Label htmlFor="box" id="box">
+          <Label htmlFor="box_number" id="box_number">
           </Label>
           <Input
             type="text"
-            name="box"
+            name="box_number"
             onChange={ handleChange }
-            value={form.box}
+            value={form.box_number}
             placeholder="Box No."
           />
         </FormGroup>
@@ -127,7 +144,9 @@ const NewFood = () => {
       </Form>
       </div>
     <div className="float-left spacer col-6">
-      <List />
+      {/* <List />
+       */}
+       <FoodMap foods={foods} center={[32.639954, -117.106705]} zoom={13} />
     </div>
     </div>
     </>
