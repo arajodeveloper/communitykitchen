@@ -3,6 +3,8 @@ import Navigation from "./Navigation"
 import Header from "./Header"
 import HeaderUser from "./HeaderUser"
 import NewFood from "./NewFood"
+import NeedFood from "./NeedFood"
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 class App extends React.Component {
@@ -13,9 +15,19 @@ class App extends React.Component {
       sign_out_route
     } = this.props
     return (
-      <React.Fragment>
-        <Navigation />
-        {logged_in &&
+      // <React.Fragment>
+      //   <Navigation />
+      //   {logged_in &&
+    <Router>
+      {/* <Header /> */}
+      <Navigation loggedIn={logged_in} />
+      <Switch>
+        <Route path="/" exact component={logged_in ? HeaderUser : Header} />
+        <Route exact path="/newfood" render={(props) => <NewFood loggedIn={logged_in} /> } />
+        <Route exact path="/needfood" render={(props) => <NeedFood loggedIn={logged_in} /> } />
+
+      </Switch>
+        {/* {logged_in &&
           <div>
             <a href={sign_out_route}>Sign Out</a>
           </div>
@@ -24,11 +36,11 @@ class App extends React.Component {
           <div>
             <a href={sign_in_route}>Sign In</a>
           </div>
-        }
-        <Header />
+        } */}
+        {/* <Header />
         <HeaderUser />
-        <NewFood />
-      </React.Fragment>
+        <NewFood /> */}
+      </Router>
     );
   }
 }

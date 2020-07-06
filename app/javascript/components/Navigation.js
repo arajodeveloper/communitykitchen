@@ -33,10 +33,28 @@ const Navigation = (props) => {
             <NavLink href="/">Home</NavLink>
           </NavItem>
           <NavItem>
-            <NavLink href="/users/sign_up">Sign up</NavLink>
+          {!props.loggedIn &&
+              <div>
+                <NavLink href="/users/sign_up">Sign up</NavLink>
+              </div>
+            }
           </NavItem>
           <NavItem>
-            <NavLink href="/users/sign_in">Sign in</NavLink>
+          {props.loggedIn &&
+              // <div>
+              //   <a href={sign_out_route}>Sign Out</a>
+              // </div>
+              <div>
+                <NavLink href="/users/sign_out">Sign Out</NavLink>
+              </div>
+
+            }
+            {!props.loggedIn &&
+              <div>
+                <NavLink href="/users/sign_in">Sign In</NavLink>
+              </div>
+            }
+            {/* <NavLink href="/users/sign_in">Sign in</NavLink> */}
           </NavItem>
         </Collapse>
       </Navbar>

@@ -17,9 +17,9 @@ class HeaderUser extends React.Component {
                 <Jumbotron style={{ backgroundImage: `url(${bgimage})`, backgroundSize: 'cover' }}>
                     <h1 className="display-3">Connecting Communities</h1>
                     <h1 className="display-3">Through Food</h1>
-                    <Button className="btn2" href="#">Give Food</Button>
+                    <Button className="btn2" href="/newfood">Give Food</Button>
                     {"\n"}
-                    <Button className="btn1" href='#'>Need Food</Button>
+                    <Button className="btn1" href='/needfood'>Need Food</Button>
                 </Jumbotron>
         </>
         );
