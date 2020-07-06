@@ -37,7 +37,7 @@ class ApplicationController < ActionController::Base
     # update current user in db with lat long
     # call api just once only when they signed up
     # p current_user
-    super
+    '/'
   end
 end
 
