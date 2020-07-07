@@ -30,6 +30,27 @@
 
 }
 
+.login_container {
+    width: 40%;
+    margin: 0 auto;
+    text-align: center;
+    padding: 0px 64px 64px 64px;
+    border: 1px solid #2c1827 !important;
+ }
+
+.top-spacer{
+  height: 64px;
+}
+
+.tenpx-space {
+  height: 10px;
+}
+.links a:hover{
+  color: #ee7475 !important;
+}
+.links a{
+  color: #2c1827 !important;
+}
 .form-group {
   margin-bottom: 0 !important;
 }
@@ -110,6 +131,7 @@ textarea::placeholder{
   font-size: 28px !important;
   font-family: 'GlamourAbsolute_Extended' !important;
   text-align: center !important;
+  color: #2c1827!important;
 }
 
 
