@@ -7,9 +7,9 @@ import {
 const AboutUs = (props) => {
   return (
       
-    <div class="container">
+    <div className="container">
         <h2 className="h2">About Community Kitchen</h2>
-        <div class="float-left card-width">
+        <div className="float-left card-width">
             <Card className="middlecard-margin">
                 <CardImg top width="100%" src="https://reactstrap.github.io/assets/318x180.svg" alt="Card image cap" />
                 <CardBody>
@@ -19,7 +19,7 @@ const AboutUs = (props) => {
                 </CardBody>
             </Card>
         </div>
-        <div class="float-left card-width">
+        <div className="float-left card-width">
             <Card className="middlecard-margin">
                 <CardImg top width="100%" src="https://reactstrap.github.io/assets/318x180.svg" alt="Card image cap" />
                 <CardBody>
@@ -29,7 +29,7 @@ const AboutUs = (props) => {
                 </CardBody>
             </Card>
         </div>
-        <div class="float-left card-width">
+        <div className="float-left card-width">
             <Card className="middlecard-margin">
                 <CardImg top width="100%" src="https://reactstrap.github.io/assets/318x180.svg" alt="Card image cap" />
                 <CardBody>
