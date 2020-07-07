@@ -23,7 +23,32 @@
   src:url('GlamourAbsolute_Extended.otf');
 }
 
+.footer-styles{
+  background-color: #2c1827;
+  height: 60px;
+}
+
+.footer-links a:hover{
+  color: #ee7475 !important;
+}
+.footer-links a{
+  color: #f2f2f2 !important;
+}
+
+.footer-styles p{
+  color: #f2f2f2;
+  margin-bottom: 0px;
+}
+
+.footer-clear{
+  clear: both;
+}
+
 .logo{
+  height: 28px;
+}
+
+.footerlogo{
   height: 28px;
 }
 .navbar {
@@ -56,6 +81,14 @@
 }
 .margin-fix {
   margin-bottom: 1rem !important;
+}
+
+.margin-top{
+  margin-top:64px;
+}
+
+.margin-bottom{
+  margin-bottom:64px;
 }
 
 .form-control{
@@ -128,6 +161,9 @@ textarea::placeholder{
   margin-top:23px;
 }
 
+.padding{
+  padding: 8px 64px 8px 64px;
+}
 .jumbotron {
   min-height: 473px !important;
   max-width: 100% !important;
