@@ -36,7 +36,7 @@
     <h2  class="display-3" style="margin: 64px 0 64px 0;">Sign-up Form</h2>
 
     <div class="container col-12">
-      <div class="form-flt-left col-6">
+      <div class="col-6 center">
           <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
           <%= render "devise/shared/error_messages", resource: resource %>
 
@@ -93,24 +93,10 @@
             <div class="actions">
               <%= f.submit "Sign up", :class=> 'btn-form btn btn-secondary' %>
             </div>
-
-            <button class="btn1 btn btn-secondary">
-            <%= render "devise/shared/links"%></button>
           </form>
       </div>
     </div>
-    <div class="float-left col-md-6">
-          <div class="leaflet-container leaflet-retina leaflet-fade-anim leaflet-grab leaflet-touch-drag leaflet-drag-target" tabindex="0" style="position: relative; outline: none;">
-            <div class="leaflet-pane leaflet-map-pane" style="transform: translate
-              <div class="leaflet-pane leaflet-tile-pane">
-                <div class="leaflet-layer" style="z-index: 1; opacity: 1;">
-                  <div class="leaflet-tile-container leaflet-zoom-animated" style="z-index: 18; transform: translate3d(0px, 0px, 0px) scale(1);">
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-    </div>
+  
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>

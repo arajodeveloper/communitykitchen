@@ -21,6 +21,7 @@ class FoodMap extends React.Component {
     popupAnchor:  [-3, -76]
 
   })
+  
   redIcon = L.icon({
     iconUrl: leafRed,
     shadowUrl: leafShadow,

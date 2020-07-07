@@ -7,38 +7,40 @@ import leafRed from './assets/leaf-red.png'
 import leafOrange from './assets/leaf-orange.png'
 import leafShadow from './assets/leaf-shadow.png'
 import { Jumbotron } from 'reactstrap';
-
-
+import pinkmapicon from './assets/pink-map-icon_300.png'
+import iconshadow from './assets/map-icon-shadow_300.png'
+import blackmapicon from './assets/black-map-icon_300.png'
+import greenmapicon from './assets/green-map-icon_300.png'
 
 class NeedFood extends React.Component {
 
   greenIcon = L.icon({
-    iconUrl: leafGreen,
-    shadowUrl: leafShadow,
-    iconSize:     [38, 50], 
-    shadowSize:   [50, 64], 
+    iconUrl: greenmapicon,
+    shadowUrl: iconshadow,
+    iconSize:     [44, 65], 
+    shadowSize:   [86, 20], 
     iconAnchor:   [22, 94],
-    shadowAnchor: [4, 62],  
+    shadowAnchor: [18, 50],  
     popupAnchor:  [-3, -76]
 
   })
   redIcon = L.icon({
-    iconUrl: leafRed,
-    shadowUrl: leafShadow,
-    iconSize:     [38, 95], 
-    shadowSize:   [50, 64], 
+    iconUrl: pinkmapicon,
+    shadowUrl: iconshadow,
+    iconSize:     [44, 65], 
+    shadowSize:   [86, 20], 
     iconAnchor:   [22, 94],
-    shadowAnchor: [4, 62],  
+    shadowAnchor: [18, 50],  
     popupAnchor:  [-3, -76]
 
   })
   orangeIcon = L.icon({
-    iconUrl: leafOrange,
-    shadowUrl: leafShadow,
-    iconSize:     [38, 95], 
-    shadowSize:   [50, 64], 
+    iconUrl: blackmapicon,
+    shadowUrl: iconshadow,
+    iconSize:     [44, 65], 
+    shadowSize:   [86, 20], 
     iconAnchor:   [22, 94],
-    shadowAnchor: [4, 62],  
+    shadowAnchor: [18, 50],  
     popupAnchor:  [-3, -76]
 
   })
