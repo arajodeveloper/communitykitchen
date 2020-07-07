@@ -98,7 +98,14 @@ textarea::placeholder{
 }
 
 .float-left{
-  float: left;
+  float: left !important;
+}
+.middlecard-margin{
+  margin: 0px 20px 0px 20px;
+}
+
+.card-width{
+  width: 350px !important;
 }
 
 .float-right{
@@ -128,12 +135,24 @@ textarea::placeholder{
   background-position: center bottom;
 }
  .display-3{
-  font-size: 28px !important;
+  font-size: 35px !important;
   font-family: 'GlamourAbsolute_Extended' !important;
   text-align: center !important;
   color: #2c1827!important;
 }
 
+.h2{
+  font-size: 28px !important;
+  font-family: 'GlamourAbsolute_Extended' !important;
+  text-align: left !important;
+  margin-bottom: 32px;
+}
+
+.h3{
+  font-size: 20px !important;
+  font-family: 'GlamourAbsolute_Extended' !important;
+  text-align: left !important;
+}
 
 .btn2{
   color: #2c1827 !important;
