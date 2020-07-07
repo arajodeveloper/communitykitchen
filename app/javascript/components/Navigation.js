@@ -18,6 +18,7 @@ import logo from '../images/Gmas_kitchen_logo_dark_300.png'
 
 const Navigation = (props) => {
   const [isOpen, setIsOpen] = useState(false);
+ 
 
   const toggle = () => setIsOpen(!isOpen);
 

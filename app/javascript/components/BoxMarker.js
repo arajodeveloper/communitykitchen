@@ -13,7 +13,7 @@ class BoxMarker extends Component {
           <Popup>
            Box Number: #{this.props.box} <br /> {this.props.name} <br />
            {/* {this.props.ingredients} <br /> {this.props.note} <br /> */}
-           <Button>More Info</Button>
+           <Button onClick={() => this.props.clickedBox(this.props.box)}>More Info</Button>
           </Popup>
        </Marker>
     );
