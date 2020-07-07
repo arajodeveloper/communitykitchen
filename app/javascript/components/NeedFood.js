@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Map, TileLayer } from 'react-leaflet';
 import BoxMarker from './BoxMarker'
+import FoodList from './FoodList'
 import leafGreen from './assets/leaf-green.png'
 import leafRed from './assets/leaf-red.png'
 import leafOrange from './assets/leaf-orange.png'
@@ -48,9 +49,55 @@ class NeedFood extends React.Component {
     this.state = {
       foods: [],
       center: [32.639954, -117.106705],
-      zoom: 13
+      zoom: 13,
+      currentBox: null,
+      reserve:'reserve',
+      reserved: 'reserved'
     }
   }
+
+  clickedBox(boxNum){
+    // this.setState()
+    console.log('CLICKED BOX CHECK:');
+    console.log(boxNum);
+    this.setState({currentBox: "" + boxNum});
+  }
+
+  reserveFood(food){
+  
+    // call backend (maybe use put ), update food.reservation to be true
+
+    food.reservation = !food.reservation
+    food.reserveRIGHTNOW = true;
+    console.log(food)
+    try {
+      fetch(`http://localhost:3000/foods/${food.id}`, {method:'PUT', headers: {
+        'Content-Type': 'application/json'
+        // 'Content-Type': 'application/x-www-form-urlencoded',
+      }, body: JSON.stringify(food)})
+      .then(response => response.json())
+      .then(data => {
+        console.log("data", data);
+        let currentFoods = [...this.state.foods];
+        let thisFoodIndex = currentFoods.findIndex((foodEl) => foodEl.id == data.id);
+        console.log('this is the food index ' + thisFoodIndex);
+        console.log(currentFoods);
+        currentFoods[thisFoodIndex] = data;
+        console.log(currentFoods);
+        this.setState({foods: currentFoods});
+        // setFoods(data)
+      })
+    } 
+    catch(err){
+      console.log(err);
+    }
+    const { foods } = this.state
+    foods.indexOf(food)
+    console.log(foods.indexOf(food))
+    // this.setState()
+  }
+
+
   
   componentDidMount(){
     try {
@@ -81,8 +128,8 @@ class NeedFood extends React.Component {
 
     let content 
     if(this.state.foods.length > 0) {
-      content = this.state.foods.map((food, idx) => {
-        return <BoxMarker key={idx} lat={food.latitude} lng={food.longitude} name={food.name} box={food.box_number} note={food.note} icon={this.allIcons[idx % 3]} />
+      content = this.state.foods.filter((food) => !food.reservation).map((food, idx) => {
+        return <BoxMarker clickedBox={this.clickedBox.bind(this)} key={idx} lat={food.latitude} lng={food.longitude} name={food.name} box={food.box_number} note={food.note} icon={this.allIcons[idx % 3]} />
       })
     } else {
       
@@ -103,6 +150,7 @@ class NeedFood extends React.Component {
        
       </Map>
       </Jumbotron>
+      <FoodList reserveFood={this.reserveFood.bind(this)} reserve={this.state.reserve} reserved={this.state.reserved} foods={this.state.foods.filter(food => food.box_number == this.state.currentBox)} />
       </>
     
     )

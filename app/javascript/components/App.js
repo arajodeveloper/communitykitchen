@@ -13,7 +13,7 @@ class App extends React.Component {
     const {
       logged_in,
       sign_in_route,
-      sign_out_route
+      sign_out_route,
     } = this.props
     return (
       // <React.Fragment>
@@ -25,7 +25,8 @@ class App extends React.Component {
       <Navigation loggedIn={logged_in} />
       
       <Switch>
-        <Route path="/" exact component={logged_in ? HeaderUser : Header} />
+        <Route path="/" exact component={logged_in ? HeaderUser : Header } />
+        {/* <Route path="/" exact component={logged_in ? HeaderUser : AboutUs } /> */}
         <Route exact path="/newfood" render={(props) => <NewFood loggedIn={logged_in} /> } />
         <Route exact path="/needfood" render={(props) => <NeedFood loggedIn={logged_in} /> } />
       </Switch>
