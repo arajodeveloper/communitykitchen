@@ -4,7 +4,6 @@ import Header from "./Header"
 import HeaderUser from "./HeaderUser"
 import NewFood from "./NewFood"
 import NeedFood from "./NeedFood"
-import AboutUs from "./AboutUs"
 import Footer from "./Footer"
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -44,8 +43,8 @@ class App extends React.Component {
         {/* <Header />
         <HeaderUser />
         <NewFood /> */}
-        <AboutUs loggedIn={logged_in} />
-        <Footer loggedIn={logged_in} />
+        {/* <AboutUs loggedIn={logged_in} /> */}
+        <Footer />
       </Router>
       
     );
