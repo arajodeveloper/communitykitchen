@@ -56,7 +56,7 @@ const NewFood = () => {
   const pushFoods = (freshFood) => {
     // fetch URL to post new state of `foods` to database
     console.log(freshFood);
-    return fetch("http://localhost:3000/foods", {
+    return fetch("https://floating-reaches-65868.herokuapp.com/foods", {
       body: JSON.stringify(freshFood),
       headers: {
         "Content-Type": "application/json"
