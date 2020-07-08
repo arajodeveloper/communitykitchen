@@ -20,7 +20,7 @@
 //     food.reserveRIGHTNOW = true;
 //     console.log(food)
 //     try {
-//       fetch(`http://localhost:3000/foods/${food.id}`, {method:'PUT', headers: {
+//       fetch(`https://floating-reaches-65868.herokuapp.com/foods/${food.id}`, {method:'PUT', headers: {
 //         'Content-Type': 'application/json'
 //         // 'Content-Type': 'application/x-www-form-urlencoded',
 //       }, body: JSON.stringify(food)})
