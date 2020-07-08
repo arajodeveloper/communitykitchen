@@ -80,6 +80,7 @@ test:
 #
 production:
   <<: *default
+  url: <%= ENV['DATABASE_URL'] %>
   database: community_kitchen_production
   username: community_kitchen
   password: <%= ENV['COMMUNITY_KITCHEN_DATABASE_PASSWORD'] %>
