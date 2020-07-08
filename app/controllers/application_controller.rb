@@ -15,7 +15,7 @@ class ApplicationController < ActionController::Base
     p current_user
     p current_user.city
     params = {
-      'access_key' => '04e5781ed21b11dfd7d36eb0b6155189',
+      'access_key' => ENV['api_key'],
       'query' => current_user.address + ' ' + current_user.city + ', ' + current_user.state + ' ' + current_user.zip_code ,
       'limit' => 1
     }
