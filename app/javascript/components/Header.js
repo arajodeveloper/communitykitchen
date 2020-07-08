@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import { Jumbotron, Button } from 'reactstrap';
-import bgimage from '../images/Gmas_kitchen_bg_image_300.png'
+import AboutUs from './AboutUs';
+
+import bgimage from '../images/Gmas_kitchen_bg_image_300.png';
 
 
 class Header extends React.Component {
@@ -19,6 +21,8 @@ class Header extends React.Component {
                     <h1 className="display-3">Through Food</h1>
                     <Button className="btn2" href="/users/sign_up">Become a Member</Button>
                 </Jumbotron>
+                <AboutUs />
+              
         </>
         );
     }
