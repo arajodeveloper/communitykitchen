@@ -52,7 +52,7 @@ class List extends React.Component {
   
   componentDidMount(){
     try {
-      fetch("https://floating-reaches-65868.herokuapp.com/foods")
+      fetch("http://localhost:3000/foods")
       .then(response => response.json())
       .then(data => {
         console.log("data", data);
