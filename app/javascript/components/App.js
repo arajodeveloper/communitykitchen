@@ -4,7 +4,9 @@ import Header from "./Header"
 import HeaderUser from "./HeaderUser"
 import NewFood from "./NewFood"
 import NeedFood from "./NeedFood"
+import UpdateFood from "./UpdateFood"
 import Footer from "./Footer"
+import ActiveListing from "./ActiveListing"
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -29,6 +31,8 @@ class App extends React.Component {
         {/* <Route path="/" exact component={logged_in ? HeaderUser : AboutUs } /> */}
         <Route exact path="/newfood" render={(props) => <NewFood loggedIn={logged_in} /> } />
         <Route exact path="/needfood" render={(props) => <NeedFood loggedIn={logged_in} /> } />
+        <Route path="/updatefood/:foodId" render={(props) => <UpdateFood loggedIn={logged_in} /> } />
+        <Route exact path="/activelisting" render={(props) => <ActiveListing loggedIn={logged_in} /> } />
       </Switch>
         {/* {logged_in &&
           <div>

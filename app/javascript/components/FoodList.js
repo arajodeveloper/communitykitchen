@@ -28,7 +28,7 @@ class FoodList extends Component {
           <CardImg top width="100%" src="https://reactstrap.github.io/assets/318x180.svg" alt="Card image cap" />
             <CardBody>
               <CardTitle className="h3">{food.name}</CardTitle>
-              <CardSubtitle> Available Food in Box: #{food.box_number} </CardSubtitle>
+              <CardSubtitle> Available Food </CardSubtitle>
               <br />
     
                 <CardText>Ingredients: {food.ingredients} <br />

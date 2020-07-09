@@ -62,6 +62,7 @@ class FoodsController < ApplicationController
   end
 
 
+
   def destroy
     food = current_user.foods.find(params[:id])
     if food.destroy
@@ -74,7 +75,7 @@ class FoodsController < ApplicationController
 
   private
   def food_params
-    params.require(:food).permit(:name, :ingredients, :note, :time, :image, :box_number, :reserveRIGHTNOW)
+    params.require(:food).permit(:name, :ingredients, :note, :time, :image, :reserveRIGHTNOW)
   end
  
 end
