@@ -87,8 +87,8 @@ class FoodMap extends React.Component {
       console.log('food length gt 0');
       content = this.props.foods.map((food, idx) => {
         console.log('hey inside map')
-        console.log(idx, food.latitude, food.box_number, this.allIcons[idx % 3])
-        return <BoxMarker key={idx} lat={food.latitude} lng={food.longitude} name={food.name} box={food.box_number} note={food.note} icon={this.allIcons[idx % 3]} />
+        console.log(idx, food.latitude, this.allIcons[idx % 3])
+        return <BoxMarker key={idx} lat={food.latitude} lng={food.longitude} name={food.name} note={food.note} icon={this.allIcons[idx % 3]} />
       })
     } else {
       console.log('food length EMPTY');
@@ -98,14 +98,14 @@ class FoodMap extends React.Component {
     return(
       <>
     
-      <Map center={this.props.center} zoom={this.props.zoom}>
+      {/* <Map center={this.props.center} zoom={this.props.zoom}>
         <TileLayer
           attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
        {content}
        
-      </Map>
+      </Map> */}
     
       </>
     
