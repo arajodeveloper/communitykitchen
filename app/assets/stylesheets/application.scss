@@ -22,8 +22,8 @@
 
 @font-face {
   font-family: 'GlamourAbsolute_Extended';
-  src:url('/app/assets/fonts/GlamourAbsolute_Extended.otf');
-}
+  src: font-url( asset-path("GlamourAbsolute_Extended.otf") );
+ }
 
 .footer-styles{
   background-color: #2c1827;
