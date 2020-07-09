@@ -2,16 +2,12 @@ import React, { Component } from 'react';
 import { Map, TileLayer } from 'react-leaflet';
 import BoxMarker from './BoxMarker'
 import FoodList from './FoodList'
-import leafGreen from './assets/leaf-green.png'
-import leafRed from './assets/leaf-red.png'
-import leafOrange from './assets/leaf-orange.png'
-import leafShadow from './assets/leaf-shadow.png'
 import { Jumbotron } from 'reactstrap';
 import pinkmapicon from './assets/pink-map-icon_300.png'
 import iconshadow from './assets/map-icon-shadow_300.png'
 import blackmapicon from './assets/black-map-icon_300.png'
 import greenmapicon from './assets/green-map-icon_300.png'
-
+import HeaderUser from './HeaderUser';
 class NeedFood extends React.Component {
 
   greenIcon = L.icon({
@@ -140,6 +136,7 @@ class NeedFood extends React.Component {
   
     return(
       <>
+       <HeaderUser />
       <Jumbotron>
       <Map center={this.state.center} zoom={this.state.zoom}>
         <TileLayer

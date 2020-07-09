@@ -3,6 +3,7 @@ import {
   Card, CardImg, CardText, CardBody,
   CardTitle, CardSubtitle, Button
 } from 'reactstrap';
+import HeaderUser from './HeaderUser';
 
 
 class ActiveListing extends Component {
@@ -10,60 +11,10 @@ class ActiveListing extends Component {
     super(props)
     this.state = {
       foods: []
-      // center: [32.639954, -117.106705],
-      // zoom: 13,
-      // currentFood: null,
-      // reserve:'reserve',
-      // reserved: 'reserved'
+      
     }
   }
-  // updateFood(food){
-  
-  //   // call backend (maybe use put ), update food.reservation to be true
-
-  //   food.reservation = !food.reservation
-  //   // food.reserveRIGHTNOW = true;
-  //   console.log(food)
-  //   try {
-  //     fetch(`http://localhost:3000/user_food/index`, {method:'PUT', headers: {
-  //       'Content-Type': 'application/json'
-  //       // 'Content-Type': 'application/x-www-form-urlencoded',
-  //     }, body: JSON.stringify(food)})
-  //     .then(response => response.json())
-  //     .then(data => {
-  //       console.log("data", data);
-  //       let currentFoods = [...this.state.foods];
-  //       let thisFoodIndex = currentFoods.findIndex((foodEl) => foodEl.id == data.id);
-  //       console.log('this is the food index ' + thisFoodIndex);
-  //       console.log(currentFoods);
-  //       currentFoods[thisFoodIndex] = data;
-  //       console.log(currentFoods);
-  //       this.setState({foods: currentFoods});
-  //       // setFoods(data)
-  //     })
-  //   } 
-  //   catch(err){
-  //     console.log(err);
-  //   }
-  //   const { foods } = this.state
-  //   foods.indexOf(food)
-  //   console.log(foods.indexOf(food))
-  //   // this.setState()
-  // }
-
-
-  // const getUserFood = () => {
-  //   fetch("http://localhost:3000/user_food/index")
-  //     .then(response => response.json())
-  //     .then(data => {
-  //       console.log("data", data);
-  //       this.setState({foods: data})
-  //     })
-  //   } 
-  //   catch(err){
-  //     console.log(err);
-  //   }
-
+ 
   
   componentDidMount(){
     try {
@@ -135,6 +86,7 @@ class ActiveListing extends Component {
     }
     return (
       <div>
+        <HeaderUser />
         {content}
       </div>
     );
