@@ -42,6 +42,13 @@ const Navigation = (props) => {
           </NavItem>
           <NavItem>
           {props.loggedIn &&
+              <div>
+                <NavLink href="/activelisting">Active Listing</NavLink>
+              </div>
+            }
+          </NavItem>
+          <NavItem>
+          {props.loggedIn &&
               // <div>
               //   <a href={sign_out_route}>Sign Out</a>
               // </div>

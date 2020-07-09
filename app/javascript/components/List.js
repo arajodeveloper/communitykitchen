@@ -79,7 +79,7 @@ class List extends React.Component {
     let content 
     if(this.state.foods.length > 0) {
       content = this.state.foods.map((food, idx) => {
-        return <BoxMarker key={idx} lat={food.latitude} lng={food.longitude} name={food.name} box={food.box_number} note={food.note} icon={this.allIcons[idx % 3]} />
+        return <BoxMarker key={idx} lat={food.latitude} lng={food.longitude} name={food.name} note={food.note} icon={this.allIcons[idx % 3]} />
       })
     } else {
       
