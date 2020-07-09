@@ -67,7 +67,7 @@ class ActiveListing extends Component {
   
   componentDidMount(){
     try {
-      fetch("http://localhost:3000/user_food/index")
+      fetch("http://floating-reaches-65868.herokuapp.com/user_food/index")
       .then(response => response.json())
       .then(data => {
         console.log("data", data);
@@ -81,7 +81,7 @@ class ActiveListing extends Component {
 
   deleteFood(food){
     try {
-      fetch(`http://localhost:3000/foods/${food.id}`, {method:'DELETE', headers: {
+      fetch(`http://floating-reaches-65868.herokuapp.com/foods/${food.id}`, {method:'DELETE', headers: {
         'Content-Type': 'application/json'
         // 'Content-Type': 'application/x-www-form-urlencoded',
       }, body: JSON.stringify(food)})

@@ -20,7 +20,7 @@ const UpdateFood = props => {
   useEffect(() => {
     // Update the document title using the browser API
     try {
-      fetch(`http://localhost:3000/foods/${foodId}`)
+      fetch(`http://floating-reaches-65868.herokuapp.com/foods/${foodId}`)
       .then(response => response.json())
       .then(data => {
         console.log("data", data);
@@ -48,7 +48,7 @@ const UpdateFood = props => {
   }
 
   const updateFood = () => {
-    return fetch(`http://localhost:3000/foods/${foodId}`, {
+    return fetch(`http://floating-reaches-65868.herokuapp.com/foods/${foodId}`, {
       body: JSON.stringify(form),
       headers: {
         "Content-Type": "application/json"
