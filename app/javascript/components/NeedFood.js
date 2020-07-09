@@ -49,16 +49,17 @@ class NeedFood extends React.Component {
       center: [32.639954, -117.106705],
       zoom: 13,
       currentFood: null,
+      currentUserFood: null,
       reserve:'reserve',
       reserved: 'reserved'
     }
   }
 
-  clickedBox(foodId){
+  clickedBox(foodId, UserFoodId){
     // this.setState()
     console.log('CLICKED BOX CHECK:');
     console.log(foodId);
-    this.setState({currentFood: foodId});
+    this.setState({currentUserFood: UserFoodId});
   }
 
   reserveFood(food){
@@ -127,7 +128,7 @@ class NeedFood extends React.Component {
     let content 
     if(this.state.foods.length > 0) {
       content = this.state.foods.filter((food) => !food.reservation).map((food, idx) => {
-        return <BoxMarker clickedBox={this.clickedBox.bind(this)} key={idx} lat={food.latitude} lng={food.longitude} name={food.name} foodId={food.id} note={food.note} icon={this.allIcons[idx % 3]} />
+        return <BoxMarker clickedBox={this.clickedBox.bind(this)} key={idx} lat={food.latitude} lng={food.longitude} name={food.name} foodId={food.id} UserFoodId={food.user_id} note={food.note} icon={this.allIcons[idx % 3]} />
       })
     } else {
       
@@ -149,7 +150,7 @@ class NeedFood extends React.Component {
        
       </Map>
       </Jumbotron>
-      <FoodList reserveFood={this.reserveFood.bind(this)} logged_in={this.props.loggedIn} reserve={this.state.reserve} reserved={this.state.reserved} foods={this.state.foods.filter((food) => food.id == this.state.currentFood)} />
+      <FoodList reserveFood={this.reserveFood.bind(this)} logged_in={this.props.loggedIn} reserve={this.state.reserve} reserved={this.state.reserved} foods={this.state.foods.filter((food) => food.user_id == this.state.currentUserFood)} />
       </>
     
     )

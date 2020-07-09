@@ -10,10 +10,7 @@ class FoodList extends Component {
 
 
   render() {
-    console.log('chceck logged in prop');
-    console.log(this.props.logged_in);
-    console.log('check food')
-    console.log(this.props.foods)
+    
     let content = (<div></div>) 
     if (this.props.numAvailFoods == 0){
       content = (<div>No Food Available Now! Come Back Later!</div>) 
