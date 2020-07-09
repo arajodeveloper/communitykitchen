@@ -54,8 +54,7 @@ class ActiveListing extends Component {
       window.location.replace(`/updatefood/${foodId}`);
     }
     catch(err){
-      debugger;
-      console.log('DDONGCHA!')
+      console.log('BAD HONGCHA!')
     }
     
   }
