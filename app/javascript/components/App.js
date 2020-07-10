@@ -18,36 +18,20 @@ class App extends React.Component {
       sign_out_route,
     } = this.props
     return (
-      // <React.Fragment>
-      //   <Navigation />
-      //   {logged_in &&
+  
   
     <Router>
-      {/* <Header /> */}
+     
       <Navigation loggedIn={logged_in} />
       
       <Switch>
         <Route path="/" exact component={logged_in ? HeaderUser : Header } />
-        {/* <Route path="/" exact component={logged_in ? HeaderUser : AboutUs } /> */}
         <Route exact path="/newfood" render={(props) => <NewFood loggedIn={logged_in} /> } />
         <Route exact path="/needfood" render={(props) => <NeedFood loggedIn={logged_in} /> } />
         <Route path="/updatefood/:foodId" render={(props) => <UpdateFood loggedIn={logged_in} /> } />
         <Route exact path="/activelisting" render={(props) => <ActiveListing loggedIn={logged_in} /> } />
       </Switch>
-        {/* {logged_in &&
-          <div>
-            <a href={sign_out_route}>Sign Out</a>
-          </div>
-        }
-        {!logged_in &&
-          <div>
-            <a href={sign_in_route}>Sign In</a>
-          </div>
-        } */}
-        {/* <Header />
-        <HeaderUser />
-        <NewFood /> */}
-        {/* <AboutUs loggedIn={logged_in} /> */}
+     
         <Footer />
       </Router>
       

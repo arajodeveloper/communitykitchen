@@ -13,7 +13,7 @@ class BoxMarker extends Component {
           <Popup>
            
            {this.props.name} <br />
-           <Button onClick={() => this.props.clickedBox(this.props.foodId)}>More Info</Button>
+           <Button onClick={() => this.props.clickedBox(this.props.foodId, this.props.UserFoodId)}>More Info</Button>
           </Popup>
        </Marker>
     );

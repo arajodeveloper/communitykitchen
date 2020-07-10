@@ -6,13 +6,8 @@ import {
   NavbarBrand,
   Nav,
   NavItem,
-  NavLink,
-  UncontrolledDropdown,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem,
-  NavbarText,
-  Button
+  NavLink
+ 
 } from 'reactstrap';
 import logo from '../images/Gmas_kitchen_logo_dark_300.png'
 
