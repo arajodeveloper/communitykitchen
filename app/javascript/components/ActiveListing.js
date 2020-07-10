@@ -64,9 +64,10 @@ class ActiveListing extends Component {
     let activeFoods = this.state.foods.filter((food) => !food.reservation)
     if (activeFoods.length > 0){
       content = activeFoods.map((food) =>{
+        let imgSource = (food.image.includes('https://') || food.image.includes('http://')) ? food.image : `/img/${food.image}`;
         return <div className="float-left card-width">
           <Card className="middlecard-margin">
-            <CardImg top width="100%" src="https://reactstrap.github.io/assets/318x180.svg" alt="Card image cap" />
+            <CardImg top width="100%" src={imgSource} alt="Card image cap" />
               <CardBody>
                 <CardTitle className="h3">{food.name}</CardTitle>
                 <CardSubtitle> Currently Active Food </CardSubtitle>

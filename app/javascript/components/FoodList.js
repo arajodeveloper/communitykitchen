@@ -21,9 +21,13 @@ class FoodList extends Component {
       try{
         content = nonReservedFoods.map((food, idx) => {
           // return <div> key={idx} {food.name} {food.ingredients} {food.note} {food.box_number} {food.time}</div>
+          let imgSource = (food.image.includes('https://') || food.image.includes('http://')) ? food.image : `/img/${food.image}`;
+          console.log(food.image);
+          console.log('does image include http or https')
+          console.log((food.image.includes('https://') || food.image.includes('http://')));
           return <div class="float-left card-width">
           <Card className="middlecard-margin">
-            <CardImg top width="100%" src="https://reactstrap.github.io/assets/318x180.svg" alt="Card image cap" />
+            <CardImg top width="100%" src={imgSource} alt="Card image cap" />
               <CardBody>
                 <CardTitle className="h3">{food.name}</CardTitle>
                 <CardSubtitle> Available Food </CardSubtitle>
