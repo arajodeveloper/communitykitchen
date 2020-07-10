@@ -19,7 +19,7 @@ const NewFood = () => {
   useEffect(() => {
   
     try {
-      fetch("http://localhost:3000/foods")
+      fetch("/foods")
       .then(response => response.json())
       .then(data => {
         console.log("data", data);
@@ -51,7 +51,7 @@ const NewFood = () => {
   const pushFoods = (freshFood) => {
     // fetch URL to post new state of `foods` to database
     console.log(freshFood);
-    return fetch("http://localhost:3000/foods", {
+    return fetch("/foods", {
       body: JSON.stringify(freshFood),
       headers: {
         "Content-Type": "application/json"

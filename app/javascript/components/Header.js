@@ -16,7 +16,7 @@ class Header extends React.Component {
 
     componentDidMount(){
       try {
-        fetch("http://localhost:3000/foods")
+        fetch("/foods")
         .then(response => response.json())
         .then(data => {
           console.log("data", data);
