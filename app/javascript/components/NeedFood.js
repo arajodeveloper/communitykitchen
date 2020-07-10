@@ -73,7 +73,7 @@ class NeedFood extends React.Component {
     food.reserveRIGHTNOW = true;
     console.log(food)
     try {
-      fetch(`http://localhost:3000/foods/${food.id}`, {method:'PUT', headers: {
+      fetch(`https://floating-reaches-65868.herokuapp.com/foods/${food.id}`, {method:'PUT', headers: {
         'Content-Type': 'application/json'
         // 'Content-Type': 'application/x-www-form-urlencoded',
       }, body: JSON.stringify(food)})
@@ -103,7 +103,7 @@ class NeedFood extends React.Component {
 
   componentDidMount(){
     try {
-      fetch("http://localhost:3000/foods")
+      fetch("https://floating-reaches-65868.herokuapp.com/foods")
       .then(response => response.json())
       .then(data => {
         console.log("data", data);
