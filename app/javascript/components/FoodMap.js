@@ -3,9 +3,9 @@ import { Jumbotron, Button } from 'reactstrap';
 import { Map, TileLayer } from 'react-leaflet';
 import BoxMarker from './BoxMarker'
 import leafGreen from './assets/leaf-green.png'
-import leafRed from './assets/leaf-red.png'
-import leafOrange from './assets/leaf-orange.png'
-import leafShadow from './assets/leaf-shadow.png'
+// import leafRed from './assets/leaf-red.png'
+// import leafOrange from './assets/leaf-orange.png'
+// import leafShadow from './assets/leaf-shadow.png'
 
 
 
@@ -14,31 +14,31 @@ class FoodMap extends React.Component {
   greenIcon = L.icon({
     iconUrl: leafGreen,
     shadowUrl: leafShadow,
-    iconSize:     [38, 50], 
-    shadowSize:   [50, 64], 
+    iconSize:     [38, 50],
+    shadowSize:   [50, 64],
     iconAnchor:   [22, 94],
-    shadowAnchor: [4, 62],  
+    shadowAnchor: [4, 62],
     popupAnchor:  [-3, -76]
 
   })
-  
+
   redIcon = L.icon({
     iconUrl: leafRed,
     shadowUrl: leafShadow,
-    iconSize:     [38, 95], 
-    shadowSize:   [50, 64], 
+    iconSize:     [38, 95],
+    shadowSize:   [50, 64],
     iconAnchor:   [22, 94],
-    shadowAnchor: [4, 62],  
+    shadowAnchor: [4, 62],
     popupAnchor:  [-3, -76]
 
   })
   orangeIcon = L.icon({
     iconUrl: leafOrange,
     shadowUrl: leafShadow,
-    iconSize:     [38, 95], 
-    shadowSize:   [50, 64], 
+    iconSize:     [38, 95],
+    shadowSize:   [50, 64],
     iconAnchor:   [22, 94],
-    shadowAnchor: [4, 62],  
+    shadowAnchor: [4, 62],
     popupAnchor:  [-3, -76]
 
   })
@@ -52,7 +52,7 @@ class FoodMap extends React.Component {
     //   zoom: 13
     // }
   }
-  
+
   // componentDidMount(){
   //   try {
   //     fetch("https://floating-reaches-65868.herokuapp.com/foods")
@@ -61,7 +61,7 @@ class FoodMap extends React.Component {
   //       console.log("data", data);
   //       this.setState({foods: data})
   //     })
-  //   } 
+  //   }
   //   catch(err){
   //     console.log(err);
   //   }
@@ -82,7 +82,7 @@ class FoodMap extends React.Component {
     console.log(this.props);
     console.log(this.props.foods.length);
     console.log(this.props.foods);
-    let content 
+    let content
     if(this.props.foods.length > 0) {
       console.log('food length gt 0');
       content = this.props.foods.map((food, idx) => {
@@ -94,21 +94,21 @@ class FoodMap extends React.Component {
       console.log('food length EMPTY');
       content = <div>Loading foods</div>
     }
-  
+
     return(
       <>
-    
+
       {/* <Map center={this.props.center} zoom={this.props.zoom}>
         <TileLayer
           attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
        {content}
-       
+
       </Map> */}
-    
+
       </>
-    
+
     )
   }
 }
