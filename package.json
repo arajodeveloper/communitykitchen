@@ -2,7 +2,7 @@
   "name": "community_kitchen",
   "private": true,
   "dependencies": {
-    "@babel/preset-react": "^7.10.4",
+    "@babel/preset-react": "^7.10.1",
     "@rails/actioncable": "^6.0.0",
     "@rails/activestorage": "^6.0.0",
     "@rails/ujs": "^6.0.0",
@@ -24,7 +24,6 @@
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.2",
     "jest": "^26.1.0",
-    "react-test-renderer": "^16.13.1",
     "webpack-dev-server": "^3.11.0"
   },
   "scripts": {
