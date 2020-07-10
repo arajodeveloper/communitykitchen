@@ -150,7 +150,7 @@ class NeedFood extends React.Component {
        
       </Map>
       </Jumbotron>
-      <FoodList reserveFood={this.reserveFood.bind(this)} logged_in={this.props.loggedIn} reserve={this.state.reserve} reserved={this.state.reserved} foods={this.state.foods.filter((food) => food.user_id == this.state.currentUserFood)} />
+      <FoodList reserveFood={this.reserveFood.bind(this)} logged_in={this.props.loggedIn} numAvailFoods={this.state.foods.filter((food) => !food.reservation).length} reserve={this.state.reserve} reserved={this.state.reserved}  foods={this.state.foods.filter((food) => food.user_id == this.state.currentUserFood)} />
       </>
     
     )
