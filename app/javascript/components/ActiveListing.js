@@ -3,8 +3,6 @@ import {
   Card, CardImg, CardText, CardBody,
   CardTitle, CardSubtitle, Button
 } from 'reactstrap';
-import HeaderUser from './HeaderUser';
-
 
 class ActiveListing extends Component {
   constructor(props){
@@ -15,7 +13,6 @@ class ActiveListing extends Component {
     }
   }
  
-  
   componentDidMount(){
     try {
       fetch("/user_food/index")
@@ -60,25 +57,21 @@ class ActiveListing extends Component {
   }
 
   render() {
-    let content = (<p>No Active Food</p>)
-    let activeFoods = this.state.foods.filter((food) => !food.reservation)
+    let content = (<p className="card-text margin-left">You have no active food listings.</p>)
+    let activeFoods = this.state.foods.filter((food, idx) => !food.reservation)
     if (activeFoods.length > 0){
-      content = activeFoods.map((food) =>{
+      content = activeFoods.map((food, idx) =>{
         let imgSource = (food.image.includes('https://') || food.image.includes('http://')) ? food.image : `/img/${food.image}`;
-        return <div className="float-left card-width">
+        return <div className="float-left card-width margin-bottom2" key={idx}>
           <Card className="middlecard-margin">
-            <CardImg top width="100%" src={imgSource} alt="Card image cap" />
+            <CardImg top height="225px" src={imgSource} alt="Card image cap" />
               <CardBody>
                 <CardTitle className="h3">{food.name}</CardTitle>
-                <CardSubtitle> Currently Active Food </CardSubtitle>
-                <br />
-      
-                  <CardText>Ingredients: {food.ingredients} <br />
-                            Description: {food.note} <br />
-                            Available Pick-Up Time: {food.time} <br/>
-                  </CardText>
-                  <Button onClick={() => this.handleEditFood(food.id)} >Update</Button>
-                  <Button onClick={() => this.deleteFood(food)}>Delete</Button>
+                  <CardText><b>Description:</b> {food.note} </CardText>
+                  <CardText><b>Ingredients:</b> {food.ingredients}</CardText>
+                  <CardText><b>Pick-Up:</b> {food.time}</CardText>
+                  <Button className="btn4 float-left" onClick={() => this.handleEditFood(food.id)} >Update</Button>
+                  <Button className="btn3 float-right" onClick={() => this.deleteFood(food)}>Delete</Button>
               </CardBody>
           </Card>
         </div>
@@ -86,7 +79,6 @@ class ActiveListing extends Component {
     }
     return (
       <div>
-        <HeaderUser />
         {content}
       </div>
     );

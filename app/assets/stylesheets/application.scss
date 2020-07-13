@@ -24,17 +24,30 @@
   font-family: 'GlamourAbsolute_Extended';
   src: font-url( asset-path("GlamourAbsolute_Extended.otf") );
  }
-
+.card-text{
+  font-family: 'Montserrat', sans-serif !important;
+  font-weight: 300;
+  font-size: 14px !important;
+}
+.margin-left{
+  margin-left: 20px;
+}
 .footer-styles{
   background-color: #2c1827;
   height: 60px;
+  font-family: 'Montserrat', sans-serif !important;
+  font-weight: 500;
+  text-transform: uppercase !important;
+  font-size: 14px !important;
 }
 
 .footer-links a:hover{
   color: #ee7475 !important;
+  text-decoration: none;
 }
 .footer-links a{
   color: #f2f2f2 !important;
+  text-decoration: none;
 }
 
 .footer-styles p{
@@ -76,6 +89,7 @@
 }
 .links a:hover{
   color: #ee7475 !important;
+  text-decoration: none;
 }
 .links a{
   color: #2c1827 !important;
@@ -94,6 +108,9 @@
 .margin-bottom{
   margin-bottom:64px;
 }
+.margin-bottom2{
+  margin-bottom:40px;
+}
 
 .form-control{
   border: 1px solid #2c1827 !important;
@@ -102,7 +119,7 @@
   margin-top: 10px;
 }
 .leaflet-container{
-  height: 400px;
+  height: 473px;
 }
 
 input::placeholder{
@@ -142,7 +159,7 @@ textarea::placeholder{
 }
 
 .card-width{
-  width: 350px !important;
+  width: 370px !important;
 }
 
 .float-right{
@@ -185,6 +202,13 @@ textarea::placeholder{
   font-size: 28px !important;
   font-family: 'GlamourAbsolute_Extended' !important;
   text-align: left !important;
+  margin-bottom: 32px;
+}
+
+.h2a{
+  font-size: 28px !important;
+  font-family: 'GlamourAbsolute_Extended' !important;
+  text-align: center !important;
   margin-bottom: 32px;
 }
 
@@ -234,7 +258,24 @@ textarea::placeholder{
   font-weight: 500;
 }
 
+.btn4:hover{
+  color: #ee7475 !important;
+  background-color: Transparent !important;
+  background-repeat:no-repeat !important;
+  border-color: #2c1827 !important;
+  border-width: 2px !important;
+  font-weight: 500;
+}
+
 .btn1:hover{
+  color: #ee7475 !important;
+  background-color: Transparent !important;
+  background-repeat:no-repeat !important;
+  border-color: #2c1827 !important;
+  border-width: 2px !important;
+  font-weight: 500;
+}
+.btn3:hover{
   color: #ee7475 !important;
   background-color: Transparent !important;
   background-repeat:no-repeat !important;
@@ -265,9 +306,10 @@ textarea::placeholder{
   font-family: 'Montserrat', sans-serif !important;
   text-transform: uppercase;
   font-size: 14px !important;
-  padding: 10px 36px !important;
   font-weight: 500;
+  padding: 10px 36px !important;
 }
+
 .btn3{
   color: #2c1827 !important;
   background-color: Transparent !important;
@@ -277,8 +319,8 @@ textarea::placeholder{
   font-family: 'Montserrat', sans-serif !important;
   text-transform: uppercase;
   font-size: 14px !important;
-  padding: 10px 36px !important;
   font-weight: 500;
+  padding: 10px 36px !important;
  }
 
  ::after, ::before {

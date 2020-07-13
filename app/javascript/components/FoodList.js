@@ -25,24 +25,22 @@ class FoodList extends Component {
           console.log(food.image);
           console.log('does image include http or https')
           console.log((food.image.includes('https://') || food.image.includes('http://')));
-          return <div class="float-left card-width">
+          return (
+          <div className="float-left card-width margin-bottom" key={idx}>
           <Card className="middlecard-margin">
-            <CardImg top width="100%" src={imgSource} alt="Card image cap" />
+            <CardImg top height="225px" src={imgSource} alt="Card image cap" />
               <CardBody>
                 <CardTitle className="h3">{food.name}</CardTitle>
-                <CardSubtitle> Available Food </CardSubtitle>
-                <br />
-      
-                  <CardText>Ingredients: {food.ingredients} <br />
-                            Description: {food.note} <br />
-                            Available Pick-Up Time: {food.time} <br/>
-                  </CardText>
+                <CardText><b>Description:</b> {food.note} </CardText>
+                  <CardText><b>Ingredients:</b> {food.ingredients}</CardText>
+                  <CardText><b>Pick-Up:</b> {food.time}</CardText>
                   { this.props.logged_in &&
                    <Button onClick={() => this.props.reserveFood(food)} className={`btn2 ${food.reservation ? "reserved" : "notReserved"}`}>{food.reservation ?  'RESERVED' : 'RESERVE'}</Button>
                   } 
               </CardBody>
           </Card>
       </div>
+      )
         })
       }
       catch(err){
