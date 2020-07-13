@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Redirect } from 'react-router-dom';
-import { Col, Row, Button, Form, FormGroup, Label, Input } from "reactstrap";
-import List from "./List"
+import { Container, Row, Button, Form, FormGroup, Label, Input } from "reactstrap";
 import FoodMap from "./FoodMap"
 
 const NewFood = () => {
@@ -70,69 +69,68 @@ const NewFood = () => {
 
   return (
     <>
-    <div className='container'>
-    <div className='form-flt-left col-6'>
-      <Form>
-        <FormGroup>
-          <Label htmlFor="name" id="name">
-          </Label>
-          <Input
-            type="text"
-            name="name"
-            onChange={ handleChange }
-            value={form.name}
-            placeholder="Food Title"
-          />
-        </FormGroup>
-        <FormGroup>
-          <Label htmlFor="ingredients" id="ingredients">
-          </Label>
-          <Input
-            type="textarea"
-            name="ingredients"
-            onChange={ handleChange }
-            value={form.ingredients}
-            placeholder="Ingredients"
-          />
-        </FormGroup>
-        <FormGroup>
-          <Label htmlFor="note" id="note">
-          </Label>
-          <Input
-            type="textarea"
-            name="note"
-            onChange={ handleChange }
-            value={form.note}
-            placeholder="Description"
-          />
-        </FormGroup>
-        <FormGroup>
-          <Label htmlFor="time" id="time">
-          </Label>
-          <Input
-            type="text"
-            name="time"
-            onChange={ handleChange }
-            value={form.time}
-            placeholder="Available Drop-off Times"
-          />
-        </FormGroup>
-        <FormGroup>
-          <Label htmlFor="image" id="image"></Label>
-          <Input type="url" name="image" placeholder="Image URL" onChange={ handleChange } value={ form.image }/>
-        </FormGroup>
-     
-        <Button className="btn2" onClick={ handleSubmit } id="submit">
-          Submit
-        </Button>
-        { success && <Redirect to="/activelisting"/> }
-      </Form>
+      <div className='container'>
+        <Row>
+          <h2 className="h2 center margin-top">Add a New Food Item</h2>
+        </Row>
+        <div className='center col-6'>
+          <Form>
+            <FormGroup>
+              <Label htmlFor="name" id="name">
+              </Label>
+              <Input
+                type="text"
+                name="name"
+                onChange={ handleChange }
+                value={form.name}
+                placeholder="Food Title"
+              />
+            </FormGroup>
+            <FormGroup>
+              <Label htmlFor="note" id="note">
+              </Label>
+              <Input
+                type="textarea"
+                name="note"
+                onChange={ handleChange }
+                value={form.note}
+                placeholder="Description"
+              />
+            </FormGroup>
+            <FormGroup>
+              <Label htmlFor="ingredients" id="ingredients">
+              </Label>
+              <Input
+                type="textarea"
+                name="ingredients"
+                onChange={ handleChange }
+                value={form.ingredients}
+                placeholder="Ingredients"
+              />
+            </FormGroup>
+            <FormGroup>
+              <Label htmlFor="time" id="time">
+              </Label>
+              <Input
+                type="text"
+                name="time"
+                onChange={ handleChange }
+                value={form.time}
+                placeholder="Available Drop-off Times"
+              />
+            </FormGroup>
+            <FormGroup>
+              <Label htmlFor="image" id="image"></Label>
+              <Input type="url" name="image" placeholder="Image URL" onChange={ handleChange } value={ form.image }/>
+            </FormGroup>
+        
+            <Button className="btn2" onClick={ handleSubmit } id="submit">
+              Submit
+            </Button>
+            { success && <Redirect to="/activelisting"/> }
+          </Form>
+        </div>
       </div>
-    <div className="float-left spacer col-6">
-     
-       <FoodMap foods={foods} center={[32.639954, -117.106705]} zoom={13} />
-    </div>
-    </div>
     </>
   );
 };

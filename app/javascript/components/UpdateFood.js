@@ -70,7 +70,10 @@ const UpdateFood = props => {
   return ( 
   <>
     <div className='container'>
-    <div className='form-flt-left col-6'>
+    <Row>
+      <h2 className="h2 center margin-top">Update Food Listing</h2>
+    </Row>
+    <div className='center col-6'>
       <Form>
         <FormGroup>
           <Label htmlFor="name" id="name">
@@ -84,17 +87,6 @@ const UpdateFood = props => {
           />
         </FormGroup>
         <FormGroup>
-          <Label htmlFor="ingredients" id="ingredients">
-          </Label>
-          <Input
-            type="textarea"
-            name="ingredients"
-            onChange={ handleChange }
-            value={form.ingredients}
-            placeholder="Ingredients"
-          />
-        </FormGroup>
-        <FormGroup>
           <Label htmlFor="note" id="note">
           </Label>
           <Input
@@ -103,6 +95,17 @@ const UpdateFood = props => {
             onChange={ handleChange }
             value={form.note}
             placeholder="Description"
+          />
+        </FormGroup>
+        <FormGroup>
+          <Label htmlFor="ingredients" id="ingredients">
+          </Label>
+          <Input
+            type="textarea"
+            name="ingredients"
+            onChange={ handleChange }
+            value={form.ingredients}
+            placeholder="Ingredients"
           />
         </FormGroup>
         <FormGroup>
@@ -136,11 +139,6 @@ const UpdateFood = props => {
         </Button>
         { success && <Redirect to="/activelisting"/> }
       </Form>
-      </div>
-    <div className="float-left spacer col-6">
-      {/* <List />
-       */}
-       {/* <FoodMap foods={foods} center={[32.639954, -117.106705]} zoom={13} /> */}
     </div>
     </div>
   </>

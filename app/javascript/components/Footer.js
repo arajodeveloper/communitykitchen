@@ -8,7 +8,7 @@ const Footer = (props) => {
         </div>
         <div className="margin-top footer-styles padding">
             <p className="float-left padding"><img className='footerlogo' src={footerlogo}/></p>
-            <p className="float-right padding footer-links"><a href="mailto:gma.kitchen.og@gmail.com">Contact Us</a></p>
+            <p className="float-right padding footer-links"><a href="mailto:gma.kitchen.og@gmail.com"><i className="far fa-envelope">&nbsp;</i>Contact Us</a></p>
         </div>
     </>
   );

@@ -1,45 +1,51 @@
 import React from 'react';
 import {
   Card, CardImg, CardText, CardBody,
-  CardTitle, CardSubtitle, Button
+  CardTitle, Container, Row, Button
 } from 'reactstrap';
+import PickUp from '../images/pick-up'
+import Reserve from '../images/reserve'
+import Browse from '../images/browse2'
 
 const AboutUs = (props) => {
   return (
-      
-    <div className="container">
-        <h2 className="h2">About Community Kitchen</h2>
-        <div className="float-left card-width">
+      <Container>
+        <Container>
+            <Row>
+            <h2 className="h2" style={{margin: '64px 0 32px 0'}}>About Community Kitchen</h2>
+            </Row>
+        </Container>
+        <Row>
+            <div className="float-left card-width">
+                <Card className="middlecard-margin">
+                <CardImg top height="225px" src={Browse} alt="Card image cap" />
+                    <CardBody>
+                        <CardTitle className="h3">Browse</CardTitle>
+                        <CardText>Choose from hundreds of meals cooked with love by your neighbors. When you don’t know when you will eat next, Community Kitchen and your neighbors will be there.</CardText>
+                    </CardBody>
+                </Card>
+            </div>
+            <div className="float-left card-width">
+                <Card className="middlecard-margin">
+                <CardImg top height="225px" src={Reserve} alt="Card image cap" />
+                    <CardBody>
+                        <CardTitle className="h3">Reserve</CardTitle>
+                        <CardText>When you’re ready to reserve your meal,  just tap Reserve. When it’s the start of your meals availability your food will then be placed in a cooler and put on the front porch, ready for pick-up.</CardText>
+                    </CardBody>
+                </Card>
+            </div>
+            
+            <div className="float-left card-width">
             <Card className="middlecard-margin">
-                <CardImg top width="100%" src="https://reactstrap.github.io/assets/318x180.svg" alt="Card image cap" />
+            <CardImg top height="225px" src={PickUp} alt="Card image cap" />
                 <CardBody>
-                <CardTitle className="h3">Browse</CardTitle>
-                <CardText>Some quick example text to build on the card title and make up the bulk of the card's content.</CardText>
-                <Button className="btn2" href="/">Button</Button>
+                    <CardTitle className="h3">Pickup</CardTitle>
+                    <CardText>Once you are ready to pick-up your meal you can visit the address and take your meal out of the cooler that was placed on the porch — and that’s it. Now you can enjoy your meal.</CardText>
                 </CardBody>
             </Card>
-        </div>
-        <div className="float-left card-width">
-            <Card className="middlecard-margin">
-                <CardImg top width="100%" src="https://reactstrap.github.io/assets/318x180.svg" alt="Card image cap" />
-                <CardBody>
-                <CardTitle className="h3">Reserve</CardTitle>
-                <CardText>Some quick example text to build on the card title and make up the bulk of the card's content.</CardText>
-                <Button className="btn2" href="/">Button</Button>
-                </CardBody>
-            </Card>
-        </div>
-        <div className="float-left card-width">
-            <Card className="middlecard-margin">
-                <CardImg top width="100%" src="https://reactstrap.github.io/assets/318x180.svg" alt="Card image cap" />
-                <CardBody>
-                <CardTitle className="h3">Pickup</CardTitle>
-                <CardText>Some quick example text to build on the card title and make up the bulk of the card's content.</CardText>
-                <Button className="btn2" href="/">Button</Button>
-                </CardBody>
-            </Card>
-        </div>
-    </div>
+            </div>
+        </Row>
+</Container>
   );
 };
 

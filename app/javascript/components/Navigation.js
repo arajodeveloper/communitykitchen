@@ -31,14 +31,14 @@ const Navigation = (props) => {
           <NavItem>
           {!props.loggedIn &&
               <div>
-                <NavLink href="/users/sign_up">Sign up</NavLink>
+                <NavLink>Sign up</NavLink>
               </div>
             }
           </NavItem>
           <NavItem>
           {props.loggedIn &&
               <div>
-                <NavLink href="/activelisting">Active Listing</NavLink>
+                <NavLink href="/activelisting">Active Listings</NavLink>
               </div>
             }
           </NavItem>
