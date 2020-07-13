@@ -31,7 +31,7 @@ const Navigation = (props) => {
           <NavItem>
           {!props.loggedIn &&
               <div>
-                <NavLink>Sign up</NavLink>
+                <NavLink href="/users/sign_up">Sign up</NavLink>
               </div>
             }
           </NavItem>
